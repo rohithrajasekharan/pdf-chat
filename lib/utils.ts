@@ -31,3 +31,18 @@ export function renderMarkdown(text: string) {
   
   return text
 }
+
+export function convertToAscii(inputString: string) {
+  const asciiString = inputString.replace(/[^\x00-\x7F]+/g, "")
+  return asciiString
+}
+
+export function splitIntoChunks<T>(array:Array<T>, batchSize = 10){
+  const chunks = [];
+
+  for (let i = 0; i < array.length; i += batchSize) {
+    chunks.push(array.slice(i, i + batchSize));
+  }
+
+  return chunks;
+};
