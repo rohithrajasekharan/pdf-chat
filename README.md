@@ -13,10 +13,8 @@ Add the following environment variables:
 * NEXT_PUBLIC_S3_SECRET_ACCESS_KEY
 * NEXT_PUBLIC_S3_BUCKET_NAME
 
-# pinecone
-
-PINECONE_API_KEY
-OPENAI_API_KEY
+* PINECONE_API_KEY
+* OPENAI_API_KEY
 
 Run the development server:
 
