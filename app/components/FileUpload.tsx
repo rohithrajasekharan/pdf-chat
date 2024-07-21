@@ -6,9 +6,10 @@ import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import toast from "react-hot-toast";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 export default function FileUpload() {
-    
+    const router = useRouter()
     const [uploading, setUploading] = React.useState(false)
 
     const { mutate, isPending } = useMutation({
@@ -45,8 +46,9 @@ export default function FileUpload() {
                     return;
                 }
                 mutate(data, {
-                    onSuccess: (data) => {
-                        console.log(data)
+                    onSuccess: ({chat_id}) => {
+                        toast.success("Chat created!");
+                        router.push(`/chat/${chat_id}`)
                     },
                     onError: (err) => {
                         toast.error("Error creating chat")
