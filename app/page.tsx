@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs"
-import FileUpload from "./components/FileUpload";
+import FileUpload from "../components/FileUpload";
 
 export default function Home() {
 
